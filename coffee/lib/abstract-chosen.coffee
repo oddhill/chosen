@@ -47,6 +47,8 @@ class AbstractChosen
   choice_label: (item) ->
     if @include_group_label_in_selected and item.group_label?
       "<b class='group-name'>#{item.group_label}</b>#{item.html}"
+    else if item.title
+      item.title
     else
       item.html
 
@@ -301,4 +303,3 @@ class AbstractChosen
   @default_multiple_text: "Select Some Options"
   @default_single_text: "Select an Option"
   @default_no_result_text: "No results match"
-
